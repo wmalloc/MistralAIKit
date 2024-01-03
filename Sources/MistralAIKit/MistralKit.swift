@@ -14,11 +14,11 @@ private let log = Logger(subsystem: "com.waqarmalik.mistralaikit", category: "Mi
 
 public final class MistralKit<ClientType: APIProtocol> {
   public let client: ClientType
-  
+
   public init(client: ClientType) {
     self.client = client
   }
-  
+
   public init(server url: URL, sessionConfiguration: URLSessionConfiguration = .default) where ClientType == Client {
     self.client = Client(serverURL: url, transport: URLSessionTransport(configuration: .init(session: URLSession(configuration: sessionConfiguration))))
   }
@@ -39,7 +39,7 @@ extension MistralKit: MistralAPI {
       throw URLError(URLError.Code(rawValue: statusCode))
     }
   }
-  
+
   public func create(embedding request: Components.Schemas.EmbeddingRequest) async throws -> Components.Schemas.EmbeddingResponse {
     let input = MistralAIKit.Operations.createEmbedding.Input(body: .json(request))
     let response = try await client.createEmbedding(input)
@@ -54,7 +54,7 @@ extension MistralKit: MistralAPI {
       throw URLError(URLError.Code(rawValue: statusCode))
     }
   }
-  
+
   public func create(chatCompletion request: Components.Schemas.ChatCompletionRequest) async throws -> Components.Schemas.ChatCompletionResponse {
     let input = MistralAIKit.Operations.createChatCompletion.Input(body: .json(request))
     let response = try await client.createChatCompletion(input)

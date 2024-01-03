@@ -1,0 +1,29 @@
+{
+    "object": "list",
+    "data": [
+        {
+            "object": "model",
+            "id": "mistral-medium",
+            "created": 1704260187,
+            "owned_by": "mistralai"
+        },
+        {
+            "owned_by": "mistralai",
+            "id": "mistral-small",
+            "created": 1704260187,
+            "object": "model"
+        },
+        {
+            "id": "mistral-tiny",
+            "owned_by": "mistralai",
+            "object": "model",
+            "created": 1704260187
+        },
+        {
+            "created": 1704260187,
+            "owned_by": "mistralai",
+            "id": "mistral-embed",
+            "object": "model"
+        }
+    ]
+}

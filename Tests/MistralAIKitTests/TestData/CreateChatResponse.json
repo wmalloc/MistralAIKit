@@ -1,0 +1,8 @@
+{
+  "model": "mistral-embed",
+  "input": [
+    "Hello",
+    "world"
+  ],
+  "encoding_format": "float"
+}
